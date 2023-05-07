@@ -2,7 +2,7 @@ const axios = require('axios');
 const moment = require('moment');
 const TelegramBot = require('node-telegram-bot-api');
 require('dotenv').config();
-const tgBot = new TelegramBot(process.env.TG_API_KEY, { polling: true });
+const tgBot = new TelegramBot(process.env.TG_API_KEY, { polling: false });
 
 let db;
 
