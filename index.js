@@ -17,7 +17,7 @@ async function main() {
   const vuelos = db.data.vuelos;
   const [vueloHoy] = vuelos.filter(
     ({ date, status }) =>
-      date === moment().format('YYYY-MM-DD') && status !== 'landed'
+      moment(date).isSameOrBefore(moment(), 'days') && status !== 'landed'
   );
 
   if (!vueloHoy) return;
